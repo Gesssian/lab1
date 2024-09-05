@@ -1,0 +1,10 @@
+.space{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.exp-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

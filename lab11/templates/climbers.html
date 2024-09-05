@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Покорители вершин мира{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/climbers.css' %}">
+<div class="double-col">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="double-col-search">
+            <input name="text" placeholder="Найти..." type="text" id="search-id"><br><br>
+            <input type="image" name="submit" src="http://127.0.0.1:9000/lab1minio/loopa.png" id="submit-img">
+        </div>
+    </form>
+    <a href="{% url 'expeditions' %}" class="url-cart"><img src="http://127.0.0.1:9000/lab1minio/cart.png" class="cart"></a>
+</div>
+    <div class="space">
+    <div class="container">
+        {% for climber in data.climbers %}
+            {% include 'climber_element.html' with element=climber %}
+        {% empty %}
+        <li>Список пуст</li>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

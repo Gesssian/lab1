@@ -1,0 +1,9 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/expedition.css' %}">
+<div class="exp-card">
+    <div class="info">
+        <img src="{{ element.img }}" class="image">
+        <p class="title">{{ element.expeditions }}</p>
+    </div>
+    <p class="short-description">{{element.description}}</p>
+</div>

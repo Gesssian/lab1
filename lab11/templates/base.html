@@ -1,0 +1,23 @@
+<!doctype html>
+{% load static %}
+<html lang="en" class="h-100">
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  <div class="header">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+      {% csrf_token %}
+      <a href="/climbers"><img src="http://127.0.0.1:9000/lab1minio/logo.png" class="logo"></a>
+    <div class="head-button">
+      <a href="/climbers" class="card-button">Альпинисты</a>
+      <a href="" class="card-button">Экспедиции</a>
+    </div>
+  </div>
+    {% block content %}{% endblock %}
+</body>
+</html>

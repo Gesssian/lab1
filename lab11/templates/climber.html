@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ data.name }}{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/climber.css' %}">
+    <div class="climber">
+        <img src="{{ data.img }}" class="image-climber">
+        <p class="description">{{data.description}}</p>
+    </div>
+{% endblock %}

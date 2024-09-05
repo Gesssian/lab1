@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Журнал экспедиций{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/expeditions.css' %}">
+<div class="space">
+    <div class="exp-container">
+        {% for expedition in data.exps %}
+            {% include 'expedition.html' with element=expedition %}
+        {% empty %}
+        <li>Корзина пуста</li>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/climber_element.css' %}">
+<div class="card">
+    <div class="info">
+        <p class="title">{{ element.name }}</p>
+        <img src="{{ element.img }}" class="image">
+        <p class="short-description">{{ element.expeditions }}</p>
+    </div>
+    <div class="down">
+        <a href="{% url 'climber_url' element.id %}">Подробнее</a>
+        <button type="button" onclick="GetJournal({element})">
+            <img src="http://127.0.0.1:9000/lab1minio/btn.png" class="img-btn">
+        </button> 
+    </div>
+</div>
